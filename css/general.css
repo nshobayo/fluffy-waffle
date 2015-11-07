@@ -1,0 +1,75 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#top-frame {
+    position: relative;
+}
+
+#float-button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'Material Icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-action-add:before {
+    content: "\e145";
+}
+
+.row {
+    width: 100%;
+    padding: 5px;
+}
+
+.pad {
+    padding: 10px;
+}
+
+.col-1 {
+    width: 16.66%;
+    float: left;
+}
+
+.col-2 {
+    width: 33.33%;
+    float: left;
+}
+
+.col-3 {
+    width: 50%;
+    float: left;
+}
+
+.col-4 {
+    width: 66.66%;
+    float: left;
+}
+
+.col-5 {
+    width: 83.33%;
+    float: left;
+}
+
+.col-6 {
+    width: 100%;
+    float: left;
+}

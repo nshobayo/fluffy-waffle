@@ -1,7 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TopBar from './topbar';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Schedule from './schedule'
+import AddClass from './add-class'
 
-var frame = document.getElementById("top-frame");
+function renderSchedule () {
+    Schedule()
+}
 
-ReactDOM.render(<TopBar />, frame);
+function renderAddClass () {
+    AddClass()
+}
+
+renderAddClass()

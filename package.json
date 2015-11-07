@@ -19,6 +19,7 @@
   "dependencies": {
     "fullcalendar": "^2.4.0",
     "jquery": "^2.1.4",
+    "material-design-icons": "^2.0.0",
     "material-ui": "^0.13.1",
     "react": "^0.14.2",
     "react-addons-create-fragment": "^0.14.2",
