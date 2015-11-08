@@ -27,6 +27,7 @@
     "react-addons-transition-group": "^0.14.2",
     "react-addons-update": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-router": "^0.13.5",
     "react-tap-event-plugin": "^0.2.1"
   },
   "devDependencies": {

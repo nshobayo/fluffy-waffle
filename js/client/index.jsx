@@ -1,14 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Router from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import Schedule from './schedule'
 import AddClass from './add-class'
 
-function renderSchedule () {
-    Schedule()
-}
+var frame = document.getElementById("top-frame")
 
-function renderAddClass () {
-    AddClass()
-}
+let routes = (
+  <Route name="app" path="/" handler={Schedule}>
+    <Route name="add-class" path="/add-class" handler={AddClass}/>
+  </Route>
+);
 
-renderAddClass()
+Router.run(routes, function (Handler) {
+  ReactDOM.render(<Handler/>, frame);
+});
