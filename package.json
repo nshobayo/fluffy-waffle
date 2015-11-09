@@ -17,17 +17,20 @@
   },
   "homepage": "https://github.com/moodspace/fluffy-waffle#readme",
   "dependencies": {
+    "express": "^4.13.3",
     "fullcalendar": "^2.4.0",
+    "history": "^1.13.0",
     "jquery": "^2.1.4",
     "material-design-icons": "^2.0.0",
     "material-ui": "^0.13.1",
+    "pushstate-server": "^1.6.0",
     "react": "^0.14.2",
     "react-addons-create-fragment": "^0.14.2",
     "react-addons-pure-render-mixin": "^0.14.2",
     "react-addons-transition-group": "^0.14.2",
     "react-addons-update": "^0.14.2",
     "react-dom": "^0.14.2",
-    "react-router": "^0.13.5",
+    "react-router": "^1.0.0-rc4",
     "react-tap-event-plugin": "^0.2.1"
   },
   "devDependencies": {

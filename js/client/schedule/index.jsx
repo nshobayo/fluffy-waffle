@@ -4,6 +4,7 @@ import TopBar from './topbar'
 import TopTabs from './navtabs'
 import CourseList from './../courselist'
 import FloatingAddButton from './../floataddbutton'
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class Schedule extends React.Component {
     searchCourses() {
@@ -24,7 +25,9 @@ class Schedule extends React.Component {
                 {label: "Breaks", content: this.searchCourses()}]
             } />
             <div id="float-button-container">
-                <FloatingAddButton />
+                <Link to={"/add-class"}>
+                    <FloatingAddButton />
+                </Link>
             </div>
         </div>
     }

@@ -47,6 +47,10 @@ html {
     padding: 10px;
 }
 
+.pad-medium {
+    padding: 20px;
+}
+
 .col-1 {
     width: 16.66%;
     float: left;
@@ -103,4 +107,8 @@ h3 {
 
 .right {
     float: right;
+}
+
+.no-pad-top {
+    padding-top: 0;
 }

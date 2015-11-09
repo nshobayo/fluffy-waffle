@@ -23,16 +23,16 @@ gulp.task('lint', function() {
   .pipe(jshint.reporter('default'));
   });
 
-// Copy HTML Templates
-gulp.task('templates', function() {
-  return gulp.src('html/templates/*.html')
-  .pipe(gulp.dest('dist/html'));
+// Copy IndexHtml
+gulp.task('index', function() {
+  return gulp.src('html/index.html')
+  .pipe(gulp.dest('dist'));
   });
 
 // Copy Server Scripts
 gulp.task('serverjs', function() {
   return gulp.src('js/server/*.js')
-  .pipe(gulp.dest('dist/js/server'));
+  .pipe(gulp.dest('dist'));
   });
 
 // Concatenate & Minify JS
@@ -87,12 +87,13 @@ gulp.task('libraries', ['lib_react', 'lib_react_dom']);
 gulp.task('watch', function() {
   gulp.watch('js/client/**/*.js', ['lint', 'scripts']);
   gulp.watch('js/client/**/*.jsx', ['lint', 'scripts']);
+  gulp.watch('js/server/*.jsx', ['serverjs']);
   gulp.watch('js/server/*.js', ['serverjs']);
   gulp.watch('data/*.json', ['contents']);
-  gulp.watch('html/templates/*.html', ['templates']);
+  gulp.watch('html/*.html', ['index']);
   gulp.watch('css/*.css', ['styles']);
   gulp.watch('node_modules/react/package.json', ['lib_react', 'lib_react_dom']);
   });
 
 // Default Task
-gulp.task('default', ['lint', 'scripts', 'serverjs', 'contents', 'templates', 'styles', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'serverjs', 'contents', 'index', 'styles', 'watch']);

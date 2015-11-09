@@ -1,18 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Router from 'react-router';
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+
+import { RouteHandler, Router, Route } from 'react-router'
+
+import Dashboard from './dashboard'
 import Schedule from './schedule'
 import AddClass from './add-class'
 
-var frame = document.getElementById("top-frame")
+// Empty shell of App
+const App = React.createClass({
+    render () {
+        return <div>
+            {this.props.children}
+        </div>
+    }
+})
 
 let routes = (
-  <Route name="app" path="/" handler={Schedule}>
-    <Route name="add-class" path="/add-class" handler={AddClass}/>
+  <Route path="/" component={App}>
+    <Route path="dashboard" component={Dashboard}/>
+    <Route path="schedule" component={Schedule}/>
+    <Route path="add-class" component={AddClass}/>
   </Route>
 );
 
-Router.run(routes, function (Handler) {
-  ReactDOM.render(<Handler/>, frame);
-});
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+let history = createBrowserHistory()
+
+ReactDOM.render(<Router history={history}>{routes}</Router>, document.getElementById("top-frame"))

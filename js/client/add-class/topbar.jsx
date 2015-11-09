@@ -3,6 +3,7 @@ import AppBar from 'material-ui/lib/app-bar';
 import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class TopBar extends React.Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class TopBar extends React.Component {
     return <AppBar
       title="Add Class"
       iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-      iconElementRight={<FlatButton label="Save" />}
+      iconElementRight={<Link to={"/schedule"}>
+        <FlatButton label="Save" />
+      </Link>}
     />
   }
 }
