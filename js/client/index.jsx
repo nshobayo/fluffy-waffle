@@ -18,6 +18,7 @@ const App = React.createClass({
 
 let routes = (
   <Route path="/" component={App}>
+    <IndexRoute component={Dashboard}/>
     <Route path="dashboard" component={Dashboard}/>
     <Route path="schedule" component={Schedule}/>
     <Route path="add-class" component={AddClass}/>
