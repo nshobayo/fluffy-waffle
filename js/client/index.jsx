@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { RouteHandler, Router, Route } from 'react-router'
+import { IndexRoute, RouteHandler, Router, Route } from 'react-router'
 
 import Dashboard from './dashboard'
 import Schedule from './schedule'
