@@ -7,7 +7,7 @@ import CourseInfo from './courseinfo'
 class AddClass extends React.Component {
     render () {
         return <div>
-            <TopBar />
+            <TopBar title={"New Class"} />
             <AddForm />
             <CourseInfo />
         </div>

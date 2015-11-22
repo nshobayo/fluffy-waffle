@@ -18,7 +18,7 @@ class Schedule extends React.Component {
 
     render () {
         return <div>
-            <TopBar />
+            <TopBar title={"Schedule"} />
             <TopTabs items={
                 [{label: "Courses", content: this.searchCourses()},
                 {label: "Exams", content: this.searchCourses()},

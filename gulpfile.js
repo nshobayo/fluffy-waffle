@@ -92,7 +92,6 @@ gulp.task('watch', function() {
   gulp.watch('data/*.json', ['contents']);
   gulp.watch('html/*.html', ['index']);
   gulp.watch('css/*.css', ['styles']);
-  gulp.watch('node_modules/react/package.json', ['lib_react', 'lib_react_dom']);
   });
 
 // Default Task
