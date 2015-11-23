@@ -8,15 +8,31 @@ import CardActions from 'material-ui/lib/card/card-actions'
 import FlatButton from 'material-ui/lib/flat-button';
 import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
-import DashCard from './dashcard'
+import { Button, Form, FormField, FormInput } from 'elemental';
+import DashCard from './dashcard'   
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class Dashboard extends React.Component {
     render () {
         return <div>
             <TopBar title="Dashboard" />
+            <div className="row pad-medium"></div>
+            <div className="row pad-medium">
+                <div className="col-1">&nbsp;</div>
+                <div className="col-4">
+                    <Form type="inline">
+                        <FormField htmlFor="inline-form-input-search" className="col-5">
+                            <FormInput type="text" placeholder="What is your main focus for today?" name="inline-form-input-search" />
+                        </FormField>
+                        <FormField className="col-1 pad-left">
+                            <Button type="default">Search</Button>
+                        </FormField>
+                    </Form>
+                </div>
+                <div className="col-1">&nbsp;</div>
+            </div>
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="Welcome • CornelldotSpace" 
                 title="Swipe to dismiss" 
@@ -24,7 +40,7 @@ class Dashboard extends React.Component {
                     show up here, and add personalized widgets." />
             </div>
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="Assignment due very soon • CS 3410" 
                 title="Today at 11:59pm" 
@@ -38,7 +54,7 @@ class Dashboard extends React.Component {
                     provide to you." />
             </div>
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="University registrar • Last updated 1 hour ago" 
                 title="IMPORTANT information on course enrollment." 
@@ -47,14 +63,14 @@ class Dashboard extends React.Component {
                         Enrollment appointments... " />
             </div>
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="New announcement • INFO 1300" 
                 title="Prelim Review Session" 
                 text="We are happy to hold a review session @ 6pm this Friday in Gates 333." />
             </div>
             
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="Today's agenda • CS 4780" 
                 title="Tree Pruning, Overfitting, Underfitting, Regularization, Model complexity" 
@@ -68,7 +84,7 @@ class Dashboard extends React.Component {
             </div>
 
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="Today's agenda • CS 5300" 
                 title="Mass Extinctions" 
@@ -79,7 +95,7 @@ class Dashboard extends React.Component {
                     the Director of the Long-­‐Term Survivor Program." />
             </div>
 
-            <div className="row">
+            <div className="row pad-medium">
                 <DashCard 
                 hint="Campus News • Last updated 23 minutes ago" 
                 title="A Random Hole in Rand Hall" 

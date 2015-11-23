@@ -14,6 +14,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var less = require('gulp-less');
+var path = require('path');
 
 
 // Lint Task
@@ -22,6 +24,20 @@ gulp.task('lint', function() {
   .pipe(jshint())
   .pipe(jshint.reporter('default'));
   });
+
+// LESS Compile
+gulp.task('styles', function () {
+  return gulp.src('less/all.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(rename('all.min.css'))
+    .pipe(sourcemaps.init())
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/css'));
+});
 
 // Copy IndexHtml
 gulp.task('index', function() {
@@ -61,16 +77,6 @@ gulp.task('contents', function() {
   .pipe(gulp.dest('dist/data'));
   });
 
-// Copy Styles
-gulp.task('styles', function() {
-  return gulp.src('css/*.css')
-  .pipe(sourcemaps.init())
-  .pipe(minifyCss())
-  .pipe(concat('all.min.css'))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('dist/css'));
-  });
-
 gulp.task('lib_react', function() {
   return gulp.src(['node_modules/react/dist/**/*'])
   .pipe(gulp.dest('dist/lib/react'));
@@ -91,7 +97,7 @@ gulp.task('watch', function() {
   gulp.watch('js/server/*.js', ['serverjs']);
   gulp.watch('data/*.json', ['contents']);
   gulp.watch('html/*.html', ['index']);
-  gulp.watch('css/*.css', ['styles']);
+  gulp.watch('less/**/*.less', ['styles']);
   });
 
 // Default Task
