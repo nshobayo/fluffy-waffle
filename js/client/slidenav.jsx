@@ -24,6 +24,10 @@ class SlideNav extends React.Component {
          text: 'Dashboard'
       },
       {
+         text: 'Customize',
+         disabled: true
+      },
+      {
          type: MenuItem.Types.LINK,
          payload: '/calendar',
          text: 'Calendar'

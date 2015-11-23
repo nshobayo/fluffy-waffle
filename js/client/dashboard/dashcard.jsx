@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import Card from 'material-ui/lib/card/card'
-import CardTitle from 'material-ui/lib/card/card-title'
-import CardText from 'material-ui/lib/card/card-text'
+import CardActions from 'material-ui/lib/card/card-actions'
+import CardExpandable from 'material-ui/lib/card/card-expandable'
+import CardHeader from 'material-ui/lib/card/card-header'
 import CardMedia from 'material-ui/lib/card/card-media'
+import CardText from 'material-ui/lib/card/card-text'
+import CardTitle from 'material-ui/lib/card/card-title'
+
 import FlatButton from 'material-ui/lib/flat-button';
 import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
@@ -17,9 +22,12 @@ class DashCard extends React.Component {
 
   render() {
     return <Card initiallyExpanded={true}>
-      <CardMedia overlay={<CardTitle title={this.props.text} subtitle=""/>}>
-        <img src="http://www.photos-public-domain.com/wp-content/uploads/2012/03/canadian-geese-in-blue-water-190x190.jpg"/>
-      </CardMedia>
+      <CardTitle subtitle={this.props.hint}/>
+      <CardText>
+        <h2 className="compact-heading">{this.props.title}</h2>
+        <h3 className="compact-heading">{this.props.subtitle}</h3>
+        <p>{this.props.text}</p>
+      </CardText>
     </Card>
   }
 }
