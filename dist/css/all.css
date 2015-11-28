@@ -3949,6 +3949,9 @@ textarea.FormInput {
 html {
   box-sizing: border-box;
 }
+svg {
+  box-sizing: initial;
+}
 *,
 *:before,
 *:after {
@@ -4053,4 +4056,10 @@ h3 {
 }
 .no-pad-top {
   padding-top: 0;
+}
+#topbar-subtitle {
+  font-size: 1rem;
+}
+.topbar-text-wrapper {
+  line-height: 100%;
 }

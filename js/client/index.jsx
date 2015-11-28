@@ -5,6 +5,7 @@ import { IndexRoute, RouteHandler, Router, Route } from 'react-router'
 
 import Dashboard from './dashboard'
 import Schedule from './schedule'
+import Class from './class'
 import AddClass from './add-class'
 
 // Empty shell of App
@@ -21,6 +22,7 @@ let routes = (
     <IndexRoute component={Dashboard}/>
     <Route path="dashboard" component={Dashboard}/>
     <Route path="schedule" component={Schedule}/>
+    <Route path="class" component={Class}/>
     <Route path="add-class" component={AddClass}/>
   </Route>
 );

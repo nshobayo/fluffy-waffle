@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
+import NavigationMenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
 
 class SlideNav extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class SlideNav extends React.Component {
   render() {
     var menuItems = [
       {
+         iconClassName: 'icon-navigation-expand-more',
          type: MenuItem.Types.LINK,
          payload: '/dashboard',
          text: 'Dashboard'
