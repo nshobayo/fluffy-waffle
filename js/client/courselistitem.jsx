@@ -13,6 +13,12 @@ class CourseListItem extends React.Component {
         this.state = {count: props.initialCount};
     }
 
+    handleClick(arg0, arg1) {
+      if (arg0 === "goToClass") {
+        location.replace("/class?"+arg1);
+      }
+    }
+
     render() {
         let iconButtonElement = (
           <IconButton
@@ -41,7 +47,8 @@ class CourseListItem extends React.Component {
             <span>{this.props.subtext[1]}</span>
             </p>
         }
-        secondaryTextLines={2} />
+        secondaryTextLines={2}
+        onClick={this.handleClick.bind(this, "goToClass", 4780)} />
     }
 }
 

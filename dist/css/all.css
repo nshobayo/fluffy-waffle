@@ -4054,6 +4054,9 @@ h3 {
 .right {
   float: right;
 }
+.center {
+  text-align: center;
+}
 .no-pad-top {
   padding-top: 0;
 }
@@ -4062,4 +4065,12 @@ h3 {
 }
 .topbar-text-wrapper {
   line-height: 100%;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+hr {
+  margin: 15px;
 }

@@ -13,7 +13,14 @@ class CourseList extends React.Component {
     var listContent = []
     var key = 0;
     this.props.items.map((item) => {
-      listContent[listContent.length] = <CourseListItem key={++key} avatar={item.subject.charAt(0)} title={`${item.subject} ${item.code}`} subtext={[`${item.instructor}`, `${item.pattern} ${item.startTime} - ${item.endTime}`]} />
+      listContent[listContent.length] = <CourseListItem
+        key={++key}
+        avatar={item.subject.charAt(0)}
+        title={`${item.subject} ${item.code}`}
+        subtext={
+          [`${item.instructor}`,
+          `${item.pattern} ${item.startTime} - ${item.endTime}`]
+        } />
       listContent[listContent.length] = <ListDivider key={++key} inset={true} />
     })
     listContent.pop()

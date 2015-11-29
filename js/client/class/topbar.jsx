@@ -13,8 +13,8 @@ class TopBar extends React.Component {
   }
 
   handleClick(arg0, arg1) {
-    if (arg0 === "toggleSlideNav") {
-      this.refs.slideNav.toggle();
+    if (arg0 === "goBack") {
+      location.replace("/schedule")
     }
   }
 
