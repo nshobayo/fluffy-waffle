@@ -9,7 +9,6 @@ var gutil = require('gulp-util');
 // Include Our Plugins
 var babelify = require('babelify');
 var jshint = require('gulp-jshint');
-var postcss = require('gulp-postcss');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
