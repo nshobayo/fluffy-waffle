@@ -1,9 +1,25 @@
 import React from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
+import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
-import NavigationMenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
+import Login from './login'
+
+import DashboardIcon from 'material-ui/lib/svg-icons/av/fiber-smart-record';
+import CustomizeIcon from 'material-ui/lib/svg-icons/image/color-lens';
+import AssignmentIcon from 'material-ui/lib/svg-icons/action/assignment';
+import CalendarIcon from 'material-ui/lib/svg-icons/action/date-range';
+import FeedbackIcon from 'material-ui/lib/svg-icons/communication/chat-bubble-outline';
+import WatchIcon from 'material-ui/lib/svg-icons/action/schedule';
+import SettingsIcon from 'material-ui/lib/svg-icons/action/settings';
+import AboutIcon from 'material-ui/lib/svg-icons/action/info-outline';
+import SignInIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
+
+import Colors from 'material-ui/lib/styles/colors'
+import List from 'material-ui/lib/lists/list';
+import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListItem from 'material-ui/lib/lists/list-item';
 
 class SlideNav extends React.Component {
   constructor(props) {
@@ -12,61 +28,66 @@ class SlideNav extends React.Component {
     this.setState = this.setState.bind(this)
   }
 
+  handleClick(arg0, arg1) {
+    if (arg0 === "goTo") {
+      location.replace(arg1)
+    }
+  }
+
   toggle() {
     this.refs.leftNav.toggle();
     this.setState({toggle: false});
   }
 
   render() {
-    var menuItems = [
-      {
-         iconClassName: 'icon-navigation-expand-more',
-         type: MenuItem.Types.LINK,
-         payload: '/dashboard',
-         text: 'Dashboard'
-      },
-      {
-         text: 'Customize',
-         disabled: true
-      },
-      {
-         type: MenuItem.Types.LINK,
-         payload: '/calendar',
-         text: 'Calendar'
-      },
-      {
-         type: MenuItem.Types.LINK,
-         payload: '/schedule',
-         text: 'Schedule'
-      },
-      {
-         type: MenuItem.Types.LINK,
-         payload: '/todos',
-         text: 'Todos'
-      },
-      { type: MenuItem.Types.SUBHEADER, text: '' },
-      {
-         type: MenuItem.Types.LINK,
-         payload: 'https://github.com/callemall/material-ui',
-         text: 'Settings'
-      },
-      {
-         text: 'Help & feedback',
-         disabled: true
-      },
-      {
-         type: MenuItem.Types.LINK,
-         payload: 'https://www.google.com',
-         text: 'About',
-         disabled: true
-      },
-    ];
-
     if (this.state.open) {
       toggle();
     }
-    //Hideable Left Nav
-    return <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
+
+    // hideable Left Nav
+    return <LeftNav ref="leftNav" docked={false} style={{color: Colors.darkBlack}}>
+      <List>
+        <ListItem
+          primaryText="Dashboard"
+          leftIcon={<DashboardIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/dashboard")} />
+        <ListItem
+          primaryText="Customize"
+          leftIcon={<CustomizeIcon />}
+          onClick={this.handleClick.bind(this, "/dashboard?edit")} />
+        <ListItem
+          primaryText="Calendar"
+          leftIcon={<CalendarIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/calendar")} />
+        <ListItem
+          primaryText="Schedule"
+          leftIcon={<WatchIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/schedule")} />
+        <ListItem
+          primaryText="Todo list"
+          leftIcon={<AssignmentIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/todo")} />
+      </List>
+      <ListDivider />
+      <List>
+        <ListItem
+          primaryText="Settings"
+          rightIcon={<SettingsIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/settings")} />
+        <ListItem
+          primaryText="Help & feedback"
+          rightIcon={<FeedbackIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/feedback")} />
+        <ListItem
+          primaryText="About"
+          rightIcon={<AboutIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/about")} />
+        <ListItem
+          primaryText="Sign in / register"
+          rightIcon={<SignInIcon />}
+          onClick={this.handleClick.bind(this, "goTo", "/account")} />
+      </List>
+    </LeftNav>
   }
 }
 

@@ -5,6 +5,7 @@ import IconButton from 'material-ui/lib/icon-button';
 import NavigationBack from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import EditIcon from 'material-ui/lib/svg-icons/editor/mode-edit';
 import SlideNav from '../slidenav'
+import Login from '../login'
 
 class TopBar extends React.Component {
   constructor(props) {
