@@ -32,9 +32,7 @@ gulp.task('styles', function () {
     }))
     .pipe(gulp.dest('dist/css'))
     .pipe(rename('all.min.css'))
-    .pipe(sourcemaps.init())
     .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'));
 });
 

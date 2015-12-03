@@ -7,6 +7,7 @@ import Dashboard from './dashboard'
 import Schedule from './schedule'
 import Class from './class'
 import AddClass from './add-class'
+import Calendar from './calendar'
 
 // Empty shell of App
 const App = React.createClass({
@@ -24,6 +25,7 @@ let routes = (
     <Route path="schedule" component={Schedule}/>
     <Route path="class" component={Class}/>
     <Route path="add-class" component={AddClass}/>
+    <Route path="calendar" component={Calendar}/>
   </Route>
 );
 
