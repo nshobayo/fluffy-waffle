@@ -6,6 +6,7 @@ import { IndexRoute, RouteHandler, Router, Route } from 'react-router'
 import Dashboard from './dashboard'
 import Schedule from './schedule'
 import Class from './class'
+import Search from './search'
 import AddClass from './add-class'
 import Calendar from './calendar'
 
@@ -25,6 +26,7 @@ let routes = (
     <Route path="schedule" component={Schedule}/>
     <Route path="class" component={Class}/>
     <Route path="add-class" component={AddClass}/>
+    <Route path="search" component={Search}/>
     <Route path="calendar" component={Calendar}/>
   </Route>
 );
