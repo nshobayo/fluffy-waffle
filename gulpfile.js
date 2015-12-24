@@ -58,7 +58,8 @@ gulp.task('scripts', function() {
         });
 
       return b.transform(babelify.configure({
-        presets: ["es2015", "react"]
+        presets: ["es2015", "react"],
+        plugins: ["transform-class-properties"]
         })).bundle()
       .pipe(source('bundle.js'))
       .pipe(gulp.dest('dist/js/client'))

@@ -12,9 +12,12 @@ import CardTitle from 'material-ui/lib/card/card-title'
 import FlatButton from 'material-ui/lib/flat-button';
 import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
+
+import MyRawTheme from '../theme.js';
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 
 class DashCard extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {count: props.initialCount};

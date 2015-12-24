@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import TopBar from './topbar'
 import SearchBar from './searchbar'
-import CourseInfo from './courseinfo'
 import SearchSuggestions from './searchsuggestions'
 
 class Search extends React.Component {
@@ -27,6 +26,26 @@ class Search extends React.Component {
                      text:"CS 3410",
                      subtext:"Computer System Organization and Programming",
                      type:"Course"
+                  }
+               ]
+            } />
+          <SearchSuggestions items=
+            {
+               [
+                  {
+                     text:"David Gries",
+                     subtext:"1 result",
+                     type:"History"
+                  },
+                  {
+                     text:"Object orientation programming",
+                     subtext:"2 results",
+                     type:"History"
+                  },
+                  {
+                     text:"2100",
+                     subtext:"4 results",
+                     type:"History"
                   }
                ]
             } />

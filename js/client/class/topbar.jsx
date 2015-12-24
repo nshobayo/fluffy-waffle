@@ -6,8 +6,21 @@ import NavigationBack from 'material-ui/lib/svg-icons/navigation/chevron-left';
 import EditIcon from 'material-ui/lib/svg-icons/editor/mode-edit';
 import SlideNav from '../slidenav'
 import Login from '../login'
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import MyRawTheme from '../theme.js';
 
 class TopBar extends React.Component {
+  //the key passed through context must be called "muiTheme"
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object,
+  }
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
+    };
+  }
+
   constructor(props) {
     super(props);
     this.state = {count: props.initialCount};

@@ -8,8 +8,21 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from '../slidenav'
 import Login from '../login'
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import MyRawTheme from '../theme.js';
 
 class TopBar extends React.Component {
+  //the key passed through context must be called "muiTheme"
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object,
+  }
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
+    };
+  }
+
   constructor(props) {
     super(props);
     this.state = {count: props.initialCount};
