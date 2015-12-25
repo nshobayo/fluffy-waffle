@@ -9,6 +9,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class CourseInfo extends React.Component {
   constructor(props) {
@@ -31,8 +32,12 @@ class CourseInfo extends React.Component {
       </CardText>
       <CardActions expandable={true}>
         <div className="row">
-          <FlatButton label="Add" className="right" />
-          <FlatButton label="Details" className="right" />
+          <Link to={"/class?4780"}>
+            <FlatButton label="Add" className="right" />
+          </Link>
+          <Link to={"/schedule"}>
+            <FlatButton label="Details" className="right" />
+          </Link>
         </div>
       </CardActions>
     </Card>

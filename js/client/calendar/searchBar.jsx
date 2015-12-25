@@ -8,7 +8,7 @@ import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from '../slidenav';
-import TopBar from './topbar';
+import TopBar from './../topbar';
 import AutoComplete from 'material-ui/lib/auto-complete';
 
 class SearchBar extends React.Component {
@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
   	}
 
 	render () {
-		return <TopBar />;
+		return <TopBar selectedIndex={1} />;
 	}
 }
 

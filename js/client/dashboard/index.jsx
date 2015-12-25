@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TopBar from './topbar'
+import TopBar from './../topbar'
 import Card from 'material-ui/lib/card/card'
 import CardTitle from 'material-ui/lib/card/card-title'
 import CardText from 'material-ui/lib/card/card-text'
@@ -16,7 +16,7 @@ import SearchBar from './searchbar'
 class Dashboard extends React.Component {
   render () {
     return <div>
-      <TopBar />
+      <TopBar selectedIndex={0} />
       <SearchBar />
       {/*
       <div className="row pad-medium"></div>

@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TopBar from './topbar'
-import TopTabs from './navtabs'
 import CourseList from './../courselist'
 import SearchBar from './searchBar'
 import TextField from 'material-ui/lib/text-field'

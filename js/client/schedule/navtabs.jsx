@@ -24,14 +24,19 @@ class NavTabs extends React.Component {
   renderItems() {
     var key = 0;
     return this.props.items.map((item) => {
-      return <Tab key={++key} label={item.label} >
+      return <Tab
+        key={++key} label={item.label}
+        style={{color: MyRawTheme.palette.toolBarText1Color}} >
       {item.content}
       </Tab>
     })
   }
 
   render() {
-    return <Tabs>{this.renderItems()}</Tabs>;
+    return <Tabs
+      tabItemContainerStyle={{backgroundColor: MyRawTheme.palette.toolBarPrimary1Color}}>
+      {this.renderItems()}
+    </Tabs>;
   }
 }
 

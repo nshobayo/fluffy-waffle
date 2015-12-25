@@ -15,13 +15,13 @@ import AccountIcon from 'material-ui/lib/svg-icons/action/account-circle';
 
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
-import SlideNav from '../slidenav'
+import SlideNav from './slidenav'
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import Login from '../login'
+import Login from './login'
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
-import MyRawTheme from '../theme.js';
+import MyRawTheme from './theme.js';
 
 class TopBar extends React.Component {
   //the key passed through context must be called "muiTheme"
@@ -49,13 +49,22 @@ class TopBar extends React.Component {
   }
 
   render() {
-    let topBarIconStyle = {fill: '#ffffff', color: '#ffffff'};
+    let topBarIconStyle = {
+      fill: MyRawTheme.palette.toolBarText1Color,
+      color: MyRawTheme.palette.toolBarText1Color
+    };
+
     return <div>
       <AppBar
+        style={{
+          backgroundColor: MyRawTheme.palette.toolBarPrimary1Color,
+          boxShadow: this.props.noShadow ? 'none': ''}}
         title={this.props.title}
         titleStyle={{textAlign: 'center'}}
         iconElementLeft={
-          <Tabs initialSelectedIndex={0} >
+          <Tabs
+            initialSelectedIndex={this.props.selectedIndex}
+            tabItemContainerStyle={{backgroundColor: MyRawTheme.palette.toolBarPrimary1Color}}>
             <Tab label={
               <Link to={"/dashboard"}>
                 <IconButton iconStyle={topBarIconStyle} >
@@ -87,10 +96,14 @@ class TopBar extends React.Component {
           </Tabs>
         }
         iconElementRight={
-          <IconButton onClick={this.handleClick.bind(this, "toggleSlideNav")} >
-            <AccountIcon />
-          </IconButton>
-        } />
+          <span>
+            <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
+              <AccountIcon />
+            </IconButton>
+          </span>
+        }>
+        {this.props.children}
+      </AppBar>
       <SlideNav ref="slideNav" />
       <Login ref="loginDialog" />
     </div>;

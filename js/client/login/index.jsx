@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TopBar from './topbar'
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
 import { Row, Col, Form, FormField, FormInput, Checkbox, Button } from 'elemental'
