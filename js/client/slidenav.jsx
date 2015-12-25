@@ -5,6 +5,9 @@ import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
 import Login from './login'
+import { Row, Col } from 'elemental';
+
+import RAvatar from 'react-avatar';
 
 import DashboardIcon from 'material-ui/lib/svg-icons/av/fiber-smart-record';
 import CustomizeIcon from 'material-ui/lib/svg-icons/image/color-lens';
@@ -44,30 +47,17 @@ class SlideNav extends React.Component {
       toggle();
     }
 
-    // hideable Left Nav
-    return <LeftNav ref="leftNav" docked={false} style={{color: Colors.darkBlack}}>
-      <List>
-        <ListItem
-          primaryText="Dashboard"
-          leftIcon={<DashboardIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/dashboard")} />
-        <ListItem
-          primaryText="Customize"
-          leftIcon={<CustomizeIcon />}
-          onClick={this.handleClick.bind(this, "/dashboard?edit")} />
-        <ListItem
-          primaryText="Calendar"
-          leftIcon={<CalendarIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/calendar")} />
-        <ListItem
-          primaryText="Schedule"
-          leftIcon={<WatchIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/schedule")} />
-        <ListItem
-          primaryText="Todo list"
-          leftIcon={<AssignmentIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/todo")} />
-      </List>
+    // hideable Right Nav
+    return <LeftNav ref="leftNav" openRight={true} docked={false} style={{color: Colors.darkBlack}}>
+      <Row style={{paddingTop: '12vmin', paddingBottom: '12vmin'}}>
+        <div style={{height: '100px', margin: 'auto'}} >
+          <RAvatar
+            name="John Dough"
+            src="http://www.mactrast.com/wp-content/uploads/2011/04/Steve-Jobs-Apple-CEO-150x150.jpg"
+            size={100}
+            round={true} />
+        </div>
+      </Row>
       <ListDivider />
       <List>
         <ListItem

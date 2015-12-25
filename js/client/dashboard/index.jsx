@@ -11,11 +11,14 @@ import Avatar from 'material-ui/lib/avatar';
 import { Button, Form, FormField, FormInput } from 'elemental';
 import DashCard from './dashcard'
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import SearchBar from './searchbar'
 
 class Dashboard extends React.Component {
   render () {
     return <div>
-      <TopBar title="Dashboard" />
+      <TopBar />
+      <SearchBar />
+      {/*
       <div className="row pad-medium"></div>
       <div className="row pad-medium">
         <div className="col-1">&nbsp;</div>
@@ -31,6 +34,7 @@ class Dashboard extends React.Component {
         </div>
         <div className="col-1">&nbsp;</div>
       </div>
+      */}
 
       <div className="row pad-medium">
         <DashCard
