@@ -7,7 +7,6 @@ import SearchSuggestions from './searchsuggestions'
 class Search extends React.Component {
     render () {
         return <div>
-          <TopBar title={"What to Add"} />
           <SearchBar />
           <SearchSuggestions items=
             {
@@ -29,7 +28,7 @@ class Search extends React.Component {
                   }
                ]
             } />
-          <SearchSuggestions items=
+          <SearchSuggestions subheader="Recent searches" items=
             {
                [
                   {
@@ -38,13 +37,23 @@ class Search extends React.Component {
                      type:"History"
                   },
                   {
-                     text:"Object orientation programming",
+                     text:"Object oriented programming",
                      subtext:"2 results",
                      type:"History"
                   },
                   {
                      text:"2100",
                      subtext:"4 results",
+                     type:"History"
+                  },
+                  {
+                     text:"data structure",
+                     subtext:"14 results",
+                     type:"History"
+                  },
+                  {
+                     text:"cs",
+                     subtext:"54 results",
                      type:"History"
                   }
                ]

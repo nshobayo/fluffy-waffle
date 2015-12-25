@@ -30,7 +30,7 @@ class SearchSuggestions extends React.Component {
   render() {
     return <div style={{paddingTop: "0"}} className="row pad-medium">
       <Paper zDepth={1}>
-        <List style={{marginTop: "1px"}} >
+        <List subheader={this.props.subheader} style={{marginTop: "1px"}} >
           {this.renderItems()}
         </List>
       </Paper>

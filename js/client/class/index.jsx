@@ -45,7 +45,7 @@ class Class extends React.Component {
 
   render () {
     return <div>
-      <TopBar title={"CS 4780 - Intro to Machine Learning"} />
+      <TopBar title={"CS 4780 - Intro to Machine Learning"} subtitle={"1.5 Hrs | 3 Cr | MWF"} />
       <CourseInfoImpression />
       <h3 className='center'>Description</h3>
       <Row style={{margin: '0', paddingLeft: '20px', paddingRight: '20px', width: '100%'}}>

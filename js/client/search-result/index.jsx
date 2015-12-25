@@ -1,17 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TopBar from './topbar'
-import AddForm from './addform'
+import SearchFilter from './searchfilter'
 import CourseInfo from './courseinfo'
 
-class AddClass extends React.Component {
+class SearchResult extends React.Component {
     render () {
-        return <div>
-            <TopBar title={"New Class"} />
-            <AddForm />
-            <CourseInfo />
-        </div>
+      return <div>
+        <TopBar title={"2110"} subtitle={"4 results"} />
+        <SearchFilter />
+        <CourseInfo />
+        <CourseInfo />
+        <CourseInfo />
+        <CourseInfo />
+      </div>
     }
 }
 
-export default AddClass;
+export default SearchResult;

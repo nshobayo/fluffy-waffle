@@ -7,6 +7,7 @@ import Dashboard from './dashboard'
 import Schedule from './schedule'
 import Class from './class'
 import Search from './search'
+import SearchResult from './search-result'
 import AddClass from './add-class'
 import Calendar from './calendar'
 
@@ -28,6 +29,7 @@ let routes = (
     <Route path="add-class" component={AddClass}/>
     <Route path="search" component={Search}/>
     <Route path="calendar" component={Calendar}/>
+    <Route path="search-result" component={SearchResult}/>
   </Route>
 );
 

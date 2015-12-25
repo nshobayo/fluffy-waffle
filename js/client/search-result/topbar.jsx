@@ -2,35 +2,45 @@ import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+import NavigationBack from 'material-ui/lib/svg-icons/navigation/chevron-left';
+import EditIcon from 'material-ui/lib/svg-icons/editor/mode-edit';
 import SlideNav from '../slidenav'
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import Login from '../login'
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import MyRawTheme from '../theme.js';
 
 class TopBar extends React.Component {
+  //the key passed through context must be called "muiTheme"
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object,
+  }
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
+    };
+  }
+
   constructor(props) {
     super(props);
     this.state = {count: props.initialCount};
   }
 
   handleClick(arg0, arg1) {
-    if (arg0 === "submitForm") {
-      location.replace("/schedule")
-    } else if (arg0 === "cancelForm") {
-      location.replace("/schedule")
+    if (arg0 === "goBack") {
+      location.replace("/search")
     }
   }
 
   render() {
+    var title = this.props.title;
+    var subtitle = this.props.subtitle;
     return <div>
       <AppBar
-      title={this.props.title}
+      title={<div className="topbar-text-wrapper"><br style={{lineHeight:'64px'}} />{title}<br /><span id="topbar-subtitle">{subtitle}</span></div>}
       iconElementLeft={
-        <IconButton onClick={this.handleClick.bind(this, "cancelForm")} ><NavigationClose /></IconButton>
-      }
-      iconElementRight={
-        <FlatButton label="Save" onClick={this.handleClick.bind(this, "submitForm")} />
+        <IconButton onClick={this.handleClick.bind(this, "goBack")} ><NavigationBack /></IconButton>
       } />
-      <SlideNav ref="slideNav" />
     </div>;
   }
 }

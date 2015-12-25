@@ -34,7 +34,7 @@ class TopBar extends React.Component {
 
   render() {
     var title = this.props.title;
-    var subtitle = "1.5 Hrs | 3 Cr | MWF";
+    var subtitle = this.props.subtitle;
     return <div>
       <AppBar
       title={<div className="topbar-text-wrapper"><br style={{lineHeight:'64px'}} />{title}<br /><span id="topbar-subtitle">{subtitle}</span></div>}
