@@ -9,7 +9,6 @@ import FlatButton from 'material-ui/lib/flat-button';
 import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
-import InstructorList from './instructorlist'
 
 class CourseInfo extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TopBar from './topbar'
 import SearchBar from './searchbar'
 import SearchSuggestions from './searchsuggestions'
 

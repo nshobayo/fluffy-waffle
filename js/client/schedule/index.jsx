@@ -18,14 +18,14 @@ class Schedule extends React.Component {
 
     render () {
         return <div>
-            <TopBar title={"Schedule"} />
+            <TopBar />
             <TopTabs items={
                 [{label: "Courses", content: this.searchCourses()},
                 {label: "Exams", content: this.searchCourses()},
                 {label: "Breaks", content: this.searchCourses()}]
             } />
             <div id="float-button-container">
-                <Link to={"/add-class"}>
+                <Link to={"/search"}>
                     <FloatingAddButton />
                 </Link>
             </div>

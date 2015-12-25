@@ -18,6 +18,8 @@ import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from '../slidenav'
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import Login from '../login'
+import Tabs from 'material-ui/lib/tabs/tabs';
+import Tab from 'material-ui/lib/tabs/tab';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import MyRawTheme from '../theme.js';
 
@@ -51,29 +53,38 @@ class TopBar extends React.Component {
     return <div>
       <AppBar
         title={this.props.title}
+        titleStyle={{textAlign: 'center'}}
         iconElementLeft={
-          <span>
-            <Link to={"/dashboard"}>
-              <IconButton iconStyle={topBarIconStyle} >
-                <HomeIcon />
-              </IconButton>
-            </Link>
-            <Link to={"/calendar"}>
-              <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
-                <CalendarIcon />
-              </IconButton>
-            </Link>
-            <Link to={"/schedule"}>
-              <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
-                <ScheduleIcon />
-              </IconButton>
-            </Link>
-            <Link to={"/todo"}>
-              <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
-                <AssignmentIcon />
-              </IconButton>
-            </Link>
-          </span>
+          <Tabs initialSelectedIndex={0} >
+            <Tab label={
+              <Link to={"/dashboard"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <HomeIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/calendar"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <CalendarIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/schedule"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <ScheduleIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/todo"}>
+                <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
+                  <AssignmentIcon />
+                </IconButton>
+              </Link>
+            } />
+          </Tabs>
         }
         iconElementRight={
           <IconButton onClick={this.handleClick.bind(this, "toggleSlideNav")} >

@@ -24,24 +24,7 @@ class SearchBar extends React.Component {
   	}
 
 	render () {
-		return <div>
-	      <TopBar title = {"Calendar"}/>
-
-	      <AutoComplete
-	      	  style = {{
-	      	  	position: 'absolute',
-	      	  	width: '80%',
-	      	  	left: '10%',
-	      	  	top: '5px',
-	      	  	zIndex: '5'
-	      	  }}
-	      	  underlineFocusStyle={{borderColor: 'red'}}
-			  hintText = "Course Numbers"
-			  dataSource= {this.state.input2}
-			  onUpdateInput={(t) => {console.log(t); this.setState({input2: [t, t+t, t+t+t]});}}
-			  onNewRequest={(t) => {console.log('request:'+t);}} />
-
-	    </div>;
+		return <TopBar />;
 	}
 }
 

@@ -48,7 +48,12 @@ class SlideNav extends React.Component {
     }
 
     // hideable Right Nav
-    return <LeftNav ref="leftNav" openRight={true} docked={false} style={{color: Colors.darkBlack}}>
+    return <LeftNav
+              ref="leftNav"
+              openRight={true}
+              docked={false}
+              style={{color: Colors.darkBlack}}
+              overlayClassName="nav-overlay" >
       <Row style={{paddingTop: '12vmin', paddingBottom: '12vmin'}}>
         <div style={{height: '100px', margin: 'auto'}} >
           <RAvatar

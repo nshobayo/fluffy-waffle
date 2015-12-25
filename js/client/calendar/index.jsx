@@ -37,7 +37,7 @@ class Calendar extends React.Component {
             {result}
 
             <div id="float-button-container">
-                <Link to={"/add-class"}>
+                <Link to={"/search"}>
                     <FloatingAddButton />
                 </Link>
             </div>

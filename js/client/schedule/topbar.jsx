@@ -2,12 +2,24 @@ import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
-import NavigationMenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
+
+import HomeIcon from 'material-ui/lib/svg-icons/action/home';
+import AssignmentIcon from 'material-ui/lib/svg-icons/action/assignment';
+import CalendarIcon from 'material-ui/lib/svg-icons/action/date-range';
+import FeedbackIcon from 'material-ui/lib/svg-icons/communication/chat-bubble-outline';
+import ScheduleIcon from 'material-ui/lib/svg-icons/action/schedule';
+import SettingsIcon from 'material-ui/lib/svg-icons/action/settings';
+import AboutIcon from 'material-ui/lib/svg-icons/action/info-outline';
+import SignInIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 import AccountIcon from 'material-ui/lib/svg-icons/action/account-circle';
+
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from '../slidenav'
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import Login from '../login'
+import Tabs from 'material-ui/lib/tabs/tabs';
+import Tab from 'material-ui/lib/tabs/tab';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import MyRawTheme from '../theme.js';
 
@@ -37,16 +49,45 @@ class TopBar extends React.Component {
   }
 
   render() {
+    let topBarIconStyle = {fill: '#ffffff', color: '#ffffff'};
     return <div>
       <AppBar
         title={this.props.title}
+        titleStyle={{textAlign: 'center'}}
         iconElementLeft={
-          <IconButton onClick={this.handleClick.bind(this, "toggleSlideNav")} >
-            <NavigationMenuIcon />
-          </IconButton>
+          <Tabs initialSelectedIndex={2} >
+            <Tab label={
+              <Link to={"/dashboard"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <HomeIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/calendar"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <CalendarIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/schedule"}>
+                <IconButton iconStyle={topBarIconStyle} >
+                  <ScheduleIcon />
+                </IconButton>
+              </Link>
+            } />
+            <Tab label={
+              <Link to={"/todo"}>
+                <IconButton iconStyle={topBarIconStyle} onClick={this.handleClick.bind(this, "toggleSlideNav")} >
+                  <AssignmentIcon />
+                </IconButton>
+              </Link>
+            } />
+          </Tabs>
         }
         iconElementRight={
-          <IconButton onClick={this.handleClick.bind(this, "showLoginDialog")} >
+          <IconButton onClick={this.handleClick.bind(this, "toggleSlideNav")} >
             <AccountIcon />
           </IconButton>
         } />

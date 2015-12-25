@@ -6,6 +6,9 @@ import Colors from 'material-ui/lib/styles/colors'
 import Paper from 'material-ui/lib/paper'
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import { Row, Col } from 'elemental';
+import IconButton from 'material-ui/lib/icon-button';
+import BackIcon from 'material-ui/lib/svg-icons/navigation/arrow-back';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -16,9 +19,14 @@ class SearchBar extends React.Component {
   render() {
     return <div className="row pad-medium">
       <form>
-        <Paper zDepth={1}>
+        <Paper zDepth={1} style={{position: 'relative'}}>
+          <Link to={"/dashboard"}>
+            <IconButton touch={true}>
+              <BackIcon />
+            </IconButton>
+          </Link>
           <TextField
-            style={{marginLeft: "10px", width: "100%"}}
+            style={{width: 'initial', position: 'absolute', left: "58px", right: "10px"}}
             hintText="Search"
             underlineStyle={{display: "none"}} />
         </Paper>

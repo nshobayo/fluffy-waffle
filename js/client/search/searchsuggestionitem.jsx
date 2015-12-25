@@ -13,6 +13,12 @@ class InstructorListItem extends React.Component {
         this.state = {count: props.initialCount};
     }
 
+    handleClick(arg0, arg1) {
+      if (arg0 === "goTo") {
+        location.replace(arg1)
+      }
+    }
+
     render() {
         let iconButtonElement = (
           <IconButton
@@ -32,7 +38,8 @@ class InstructorListItem extends React.Component {
         return <ListItem
           primaryText={this.props.text}
           secondaryText={<p>{this.props.subtext}</p>}
-          secondaryTextLines={1} />
+          secondaryTextLines={1}
+          onClick={this.handleClick.bind(this, "goTo", "/search-result")}/>
     }
 }
 
