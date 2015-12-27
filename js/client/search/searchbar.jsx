@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
     return <div className="row pad-medium">
       <form>
         <Paper zDepth={1} style={{position: 'relative'}}>
-          <Link to={"/dashboard"}>
+          <Link to={"/schedule"}>
             <IconButton touch={true}>
               <BackIcon />
             </IconButton>

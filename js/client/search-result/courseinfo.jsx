@@ -32,10 +32,10 @@ class CourseInfo extends React.Component {
       </CardText>
       <CardActions expandable={true}>
         <div className="row">
-          <Link to={"/class?4780"}>
+          <Link to={"/schedule"}>
             <FlatButton label="Add" className="right" />
           </Link>
-          <Link to={"/schedule"}>
+          <Link to={"/class?4780"}>
             <FlatButton label="Details" className="right" />
           </Link>
         </div>

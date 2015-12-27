@@ -56,9 +56,14 @@ class TopBar extends React.Component {
 
     return <div>
       <AppBar
-        style={{
-          backgroundColor: MyRawTheme.palette.toolBarPrimary1Color,
-          boxShadow: this.props.noShadow ? 'none': ''}}
+        style={
+          this.props.noShadow ? {
+            backgroundColor: MyRawTheme.palette.toolBarPrimary1Color,
+            boxShadow: 'none'
+          } : {
+            backgroundColor: MyRawTheme.palette.toolBarPrimary1Color
+          }
+        }
         title={this.props.title}
         titleStyle={{textAlign: 'center'}}
         iconElementLeft={
