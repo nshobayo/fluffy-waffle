@@ -30,7 +30,7 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import ReactSwipe from 'react-swipe';
 import CourseInfoImpression from './courseinfoimpression';
 import CourseInfoTable from './courseinfotable';
-
+import BottomFullWidthButton from '../bottomfullwidthbutton';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class Class extends React.Component {
@@ -94,6 +94,11 @@ class Class extends React.Component {
           </CardText>
         </Card></div>
       </ReactSwipe>
+      <div id="float-button-container">
+          <Link to={"/schedule"}>
+              <BottomFullWidthButton />
+          </Link>
+      </div>
     </div>
   }
 }

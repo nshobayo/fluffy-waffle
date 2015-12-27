@@ -3962,7 +3962,7 @@ svg {
 }
 #float-button-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
   right: 0;
 }

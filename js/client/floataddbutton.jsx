@@ -25,7 +25,7 @@ class FloatingAddButton extends React.Component {
       style={{
         position: "absolute",
         right: "20px",
-        bottom: "0"
+        bottom: "20px"
       }}
       iconClassName="icon-action-add"
       secondary={false} />

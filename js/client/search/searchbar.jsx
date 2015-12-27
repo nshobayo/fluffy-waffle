@@ -17,9 +17,14 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    return <div className="row pad-medium">
+    return <div className="row pad-medium" style={{paddingBottom: '0'}} >
       <form>
-        <Paper zDepth={1} style={{position: 'relative'}}>
+        <Paper
+          zDepth={1}
+          style={{
+            position: 'relative',
+            borderRadius: '2px 2px 0 0',
+            borderBottom: '2px solid #eee' }}>
           <Link to={"/schedule"}>
             <IconButton touch={true}>
               <BackIcon />
