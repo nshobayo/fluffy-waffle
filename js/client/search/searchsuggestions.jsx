@@ -7,7 +7,7 @@ import Paper from 'material-ui/lib/paper'
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import { Row, Col } from 'elemental';
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import SearchSuggestionItem from './searchsuggestionitem'
 
 class SearchSuggestions extends React.Component {

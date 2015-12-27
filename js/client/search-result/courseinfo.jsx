@@ -20,7 +20,7 @@ class CourseInfo extends React.Component {
   render() {
     return <Card initiallyExpanded={true}>
       <CardMedia>
-        <img src="http://lorempixel.com/600/337/nature/"/>
+        <img src="https://placeimg.com/640/480/any"/>
       </CardMedia>
       <CardTitle
         title="CS 2110 - Introduction to Asian American Studies"

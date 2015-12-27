@@ -26,6 +26,7 @@ class SearchBar extends React.Component {
             </IconButton>
           </Link>
           <TextField
+            value='CS 3'
             style={{width: 'initial', position: 'absolute', left: "58px", right: "10px"}}
             hintText="Search"
             underlineStyle={{display: "none"}} />

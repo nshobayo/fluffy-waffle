@@ -21,7 +21,7 @@ import SignInIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 
 import Colors from 'material-ui/lib/styles/colors'
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import ListItem from 'material-ui/lib/lists/list-item';
 
 class SlideNav extends React.Component {

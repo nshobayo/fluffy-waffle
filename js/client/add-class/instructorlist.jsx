@@ -9,7 +9,7 @@ import Colors from 'material-ui/lib/styles/colors'
 import Avatar from 'material-ui/lib/avatar';
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import InstructorListItem from './instructorlistitem'
 
 class InstructorList extends React.Component {

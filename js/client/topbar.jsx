@@ -78,13 +78,6 @@ class TopBar extends React.Component {
               </Link>
             } />
             <Tab label={
-              <Link to={"/calendar"}>
-                <IconButton iconStyle={topBarIconStyle} >
-                  <CalendarIcon />
-                </IconButton>
-              </Link>
-            } />
-            <Tab label={
               <Link to={"/schedule"}>
                 <IconButton iconStyle={topBarIconStyle} >
                   <ScheduleIcon />

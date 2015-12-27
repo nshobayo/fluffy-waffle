@@ -25,7 +25,7 @@ import DiningIcon from 'material-ui/lib/svg-icons/maps/local-dining';
 
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import ListItem from 'material-ui/lib/lists/list-item';
 import ReactSwipe from 'react-swipe';
 import CourseInfoImpression from './courseinfoimpression';

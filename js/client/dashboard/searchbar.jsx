@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
   render() {
     return <form>
     <div className="row pad-medium"
-      style={{position: 'relative', height: '60vmin', backgroundSize: 'cover', backgroundImage: 'url(' + 'http://lorempixel.com/600/337/nature/' + ')'}}>
+      style={{position: 'relative', height: '60vmin', backgroundSize: 'cover', backgroundImage: 'url(' + 'https://placeimg.com/640/480/tech' + ')'}}>
         <Paper zDepth={1} style={{position: 'absolute', left: '10px', right: '10px', bottom: '10vmin'}}>
           <TextField
             style={{marginLeft: "10px", width: "100%"}}
