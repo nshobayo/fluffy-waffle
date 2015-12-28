@@ -99,6 +99,8 @@ class Class extends React.Component {
               <BottomFullWidthButton />
           </Link>
       </div>
+      <br />
+      <br />
     </div>
   }
 }

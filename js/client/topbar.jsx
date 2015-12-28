@@ -17,7 +17,6 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from './slidenav'
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import Login from './login'
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
@@ -43,8 +42,6 @@ class TopBar extends React.Component {
   handleClick(arg0, arg1) {
     if (arg0 === "toggleSlideNav") {
       this.refs.slideNav.toggle();
-    } else if (arg0 === "showLoginDialog") {
-      this.refs.loginDialog.show();
     }
   }
 
@@ -103,7 +100,6 @@ class TopBar extends React.Component {
         {this.props.children}
       </AppBar>
       <SlideNav ref="slideNav" />
-      <Login ref="loginDialog" />
     </div>;
   }
 }

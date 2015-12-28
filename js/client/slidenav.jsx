@@ -4,7 +4,6 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
-import Login from './login'
 import { Row, Col } from 'elemental';
 
 import RAvatar from 'react-avatar';
@@ -80,7 +79,7 @@ class SlideNav extends React.Component {
         <ListItem
           primaryText="Sign in / register"
           rightIcon={<SignInIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/account")} />
+          onClick={this.handleClick.bind(this, "goTo", "/login")} />
       </List>
     </LeftNav>
   }

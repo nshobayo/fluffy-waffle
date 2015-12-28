@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom'
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
 import { Row, Col, Form, FormField, FormInput, Checkbox, Button } from 'elemental'
+import RaisedButton from 'material-ui/lib/raised-button';
+
+import Card from 'material-ui/lib/card/card'
+import CardMedia from 'material-ui/lib/card/card-media'
+import CardTitle from 'material-ui/lib/card/card-title'
+import CardText from 'material-ui/lib/card/card-text'
+import CardActions from 'material-ui/lib/card/card-actions'
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import TopBar from './topbar';
 
 class Login extends React.Component {
   constructor(props) {
@@ -36,30 +45,61 @@ class Login extends React.Component {
         onClick={this.handleClick.bind(this, "submitForm")} />
     ];
 
-    return <Dialog
-      ref="loginDialog"
-      title="Sign in to Glassroom"
-      actions={customActions}
-      open={this.state.showDialogCustomActions}
-      onRequestClose={this._handleRequestClose}>
-      <Row style={{margin: '0', paddingTop: '15px', paddingBottom: '10px', width: '100%'}}>
-        <Col sm="1/5" />
-        <Col sm="3/5" style={{paddingTop: '30px'}}>
-          <Form>
-            <FormField label="Email address" htmlFor="basic-form-input-email">
-              <FormInput autofocus type="email" placeholder="Enter email" name="basic-form-input-email" />
-            </FormField>
-            <FormField label="Password" htmlFor="basic-form-input-password">
-              <FormInput type="password" placeholder="Password" name="basic-form-input-password" />
-            </FormField>
-            <FormField>
-              <Checkbox label="Remember me" />
-            </FormField>
-          </Form>
-        </Col>
-        <Col sm="1/5" />
-      </Row>
-    </Dialog>;
+    return <div style={{backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: 'url("https://placeimg.com/480/640/arch")', height: '100vh'}}>
+      <TopBar title='Log In or Sign Up' />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1 style={{
+        fontSize: '3.6rem',
+        textShadow: '0px 0px 30px rgba(50, 50, 50, 0.2)',
+        color: 'white',
+        textAlign: 'center',
+        fontFamily: "'Vampiro One', cursive"}}
+      >
+        Glassroom
+      </h1>
+      <br />
+      <div className="row pad-medium center">
+        <Link to={"/auth/facebook"}>
+          <RaisedButton className="row pad-medium" backgroundColor="#3b5998" label="Login with Facebook" secondary={true} />
+        </Link>
+      </div>
+      <div className="row pad-medium">
+        <Card initiallyExpanded={true}>
+          <CardText>
+            <h2 className="compact-heading" style={{textAlign: 'center'}}>
+              Sign into Glassroom
+            </h2>
+            <Row style={{margin: '0', paddingTop: '15px', paddingBottom: '10px', width: '100%'}}>
+              <Col sm="1/5" />
+              <Col sm="3/5" style={{paddingTop: '30px'}}>
+                <Form>
+                  <FormField label="Email address" htmlFor="basic-form-input-email">
+                    <FormInput autofocus type="email" placeholder="Enter email" name="basic-form-input-email" />
+                  </FormField>
+                  <FormField label="Password" htmlFor="basic-form-input-password">
+                    <FormInput type="password" placeholder="Password" name="basic-form-input-password" />
+                  </FormField>
+                  <FormField>
+                    <Checkbox label="Remember me" />
+                  </FormField>
+                </Form>
+              </Col>
+              <Col sm="1/5" />
+            </Row>
+          </CardText>
+          <CardActions expandable={true}>
+            <div className="row">
+              <Link to={"/schedule"}>
+                <FlatButton label="Login" className="right" />
+              </Link>
+            </div>
+          </CardActions>
+        </Card>
+      </div>
+    </div>;
   }
 }
 
