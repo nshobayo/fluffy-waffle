@@ -26,8 +26,7 @@ import ListItem from 'material-ui/lib/lists/list-item';
 class SlideNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {count: props.initialCount};
-    this.setState = this.setState.bind(this)
+    this.state = {count: props.initialCount, open: false};
   }
 
   handleClick(arg0, arg1) {
@@ -36,19 +35,13 @@ class SlideNav extends React.Component {
     }
   }
 
-  toggle() {
-    this.refs.leftNav.toggle();
-    this.setState({toggle: false});
-  }
+  handleToggle = () => this.setState({open: !this.state.open});
 
   render() {
-    if (this.state.open) {
-      toggle();
-    }
-
     // hideable Right Nav
     return <LeftNav
-              ref="leftNav"
+              open={this.state.open}
+              ref="rightNav"
               openRight={true}
               docked={false}
               style={{color: Colors.darkBlack}}
@@ -57,7 +50,7 @@ class SlideNav extends React.Component {
         <div style={{height: '100px', margin: 'auto'}} >
           <RAvatar
             name="John Dough"
-            src="http://www.mactrast.com/wp-content/uploads/2011/04/Steve-Jobs-Apple-CEO-150x150.jpg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/245px-Steve_Jobs_Headshot_2010-CROP.jpg"
             size={100}
             round={true} />
         </div>

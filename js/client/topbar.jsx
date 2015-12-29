@@ -41,7 +41,7 @@ class TopBar extends React.Component {
 
   handleClick(arg0, arg1) {
     if (arg0 === "toggleSlideNav") {
-      this.refs.slideNav.toggle();
+      this.refs.slideNav.handleToggle();
     }
   }
 

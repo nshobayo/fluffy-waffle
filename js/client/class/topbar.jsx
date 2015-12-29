@@ -37,7 +37,16 @@ class TopBar extends React.Component {
     var subtitle = this.props.subtitle;
     return <div>
       <AppBar
-      title={<div className="topbar-text-wrapper">{title}<br /><span id="topbar-subtitle">{subtitle}</span></div>}
+      title={
+        <div className="topbar-text-wrapper">
+          <span style={{overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block'}}>
+            {title}
+          </span>
+          <br />
+          <span id="topbar-subtitle">
+            {subtitle}
+          </span>
+        </div>}
       iconElementLeft={
         <IconButton onClick={this.handleClick.bind(this, "goBack")} ><NavigationBack /></IconButton>
       }

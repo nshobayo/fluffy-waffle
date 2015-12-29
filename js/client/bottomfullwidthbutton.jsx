@@ -16,7 +16,7 @@ class BottomFullWidthButton extends React.Component {
   }
 
   getChildContext() {
-  return {
+    return {
       muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
     };
   }
@@ -26,11 +26,14 @@ class BottomFullWidthButton extends React.Component {
       primary={false}
       secondary={true}
       label="Add this class"
+      labelStyle={{height: '48px'}}
       style={{
+        height: '48px',
+        borderRadius: '0',
         position: "absolute",
         left: "0",
         right: "0",
-        bottom: "0"
+        bottom: "-2px"
       }} />
   }
 }
