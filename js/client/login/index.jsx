@@ -45,28 +45,7 @@ class Login extends React.Component {
         onClick={this.handleClick.bind(this, "submitForm")} />
     ];
 
-    return <div style={{backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: 'url("https://placeimg.com/480/640/arch")', height: '100vh'}}>
-      <TopBar title='Log In or Sign Up' />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1 style={{
-        fontSize: '3.6rem',
-        textShadow: '0px 0px 30px rgba(50, 50, 50, 0.2)',
-        color: 'white',
-        textAlign: 'center',
-        fontFamily: "'Vampiro One', cursive"}}
-      >
-        Glassroom
-      </h1>
-      <br />
-      <div className="row pad-medium center">
-        <Link to={"/auth/facebook"}>
-          <RaisedButton className="row pad-medium" backgroundColor="#3b5998" label="Login with Facebook" secondary={true} />
-        </Link>
-      </div>
-      <div className="row pad-medium">
+    {/* <div className="row pad-medium">
         <Card initiallyExpanded={true}>
           <CardText>
             <h2 className="compact-heading" style={{textAlign: 'center'}}>
@@ -98,6 +77,45 @@ class Login extends React.Component {
             </div>
           </CardActions>
         </Card>
+      </div>
+    </div>*/}
+
+    var loginButtonStyle={height: '48px', width: '50%', maxWidth: '320px'};
+    var loginLabelStyle={color: 'white', height: '48px'};
+
+    return <div style={{backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: 'url("https://placeimg.com/480/640/arch")', height: '100vh'}}>
+      <TopBar title='Log In or Sign Up' />
+      <br />
+      <h1 style={{
+        lineHeight: '50vh',
+        fontSize: '3.6rem',
+        textShadow: '0px 0px 30px rgba(50, 50, 50, 0.2)',
+        color: 'white',
+        textAlign: 'center',
+        fontFamily: "'Vampiro One', cursive"}}
+      >
+        Glassroom
+      </h1>
+      <br />
+      <div className="row pad-medium center">
+        <Link to={"/auth/facebook"}>
+          <RaisedButton
+            style={loginButtonStyle}
+            labelStyle={loginLabelStyle}
+            className="row pad-medium"
+            backgroundColor="#3b5998"
+            label="Log in with Facebook" />
+        </Link>
+      </div>
+      <div className="row pad-medium center">
+        <Link to={"/auth/google"}>
+          <RaisedButton
+            style={loginButtonStyle}
+            labelStyle={loginLabelStyle}
+            className="row pad-medium"
+            backgroundColor="#d34836"
+            label="Continue with Google" />
+        </Link>
       </div>
     </div>;
   }

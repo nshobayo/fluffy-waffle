@@ -5,6 +5,7 @@ var passport = require('passport')
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 // remove the following on production server
+app.use("/res", express.static(__dirname + '/res'));
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/js", express.static(__dirname + '/js'));
 app.use("/data", express.static(__dirname + '/data'));
