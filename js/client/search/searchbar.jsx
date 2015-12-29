@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
             position: 'relative',
             borderRadius: '2px 2px 0 0',
             borderBottom: '2px solid #eee' }}>
-          <Link to={"/schedule"}>
+          <Link to={this.props.returnTo} >
             <IconButton touch={true}>
               <BackIcon />
             </IconButton>

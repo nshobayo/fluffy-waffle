@@ -6,7 +6,7 @@ import SearchSuggestions from './searchsuggestions'
 class Search extends React.Component {
     render () {
         return <div>
-          <SearchBar />
+          <SearchBar returnTo={this.props.returnTo} />
           <SearchSuggestions style={{marginTop: '-2px', paddingTop: '0'}} items=
             {
                [

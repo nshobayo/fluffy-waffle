@@ -22,8 +22,7 @@ class TopBar extends React.Component {
   }
 
   render() {
-    return <div>
-      <AppBar
+    return <AppBar
       style={{backgroundColor: 'transparent', boxShadow: 'none'}}
       title={this.props.title}
       iconElementLeft={
@@ -31,8 +30,7 @@ class TopBar extends React.Component {
       }
       iconElementRight={
         <IconButton onClick={this.handleClick.bind(this, "showMore")} ><MoreVertIcon /></IconButton>
-      } />
-    </div>;
+      } />;
   }
 }
 

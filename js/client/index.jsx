@@ -11,6 +11,7 @@ import SearchResult from './search-result'
 import AddClass from './add-class'
 import Calendar from './calendar'
 import Login from './login';
+import About from './about';
 
 // Empty shell of App
 const App = React.createClass({
@@ -25,6 +26,7 @@ let routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Dashboard}/>
     <Route path="login" component={Login}/>
+    <Route path="about" component={About}/>
     <Route path="dashboard" component={Dashboard}/>
     <Route path="schedule" component={Schedule}/>
     <Route path="class" component={Class}/>
