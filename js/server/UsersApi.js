@@ -34,6 +34,6 @@ function oAuth(user){
 function genAuth(user){
         //callback for Handling db response
     //Check key against DB or Add new User
-});
+}
 
 

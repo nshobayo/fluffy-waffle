@@ -146,8 +146,8 @@
       <file leaf-file-name="UsersApi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/server/UsersApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45454547">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.6181818">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -645,12 +645,12 @@
       <created>1451867799018</created>
       <option name="number" value="Default" />
       <updated>1451867799018</updated>
-      <workItem from="1451867800287" duration="6801000" />
+      <workItem from="1451867800287" duration="6880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6801000" />
+    <option name="totallyTimeSpent" value="6880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -710,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/server/UsersApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.6181818">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
