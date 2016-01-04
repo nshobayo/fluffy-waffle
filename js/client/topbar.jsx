@@ -17,7 +17,6 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import SlideNav from './slidenav'
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import Login from './login'
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
@@ -42,9 +41,7 @@ class TopBar extends React.Component {
 
   handleClick(arg0, arg1) {
     if (arg0 === "toggleSlideNav") {
-      this.refs.slideNav.toggle();
-    } else if (arg0 === "showLoginDialog") {
-      this.refs.loginDialog.show();
+      this.refs.slideNav.handleToggle();
     }
   }
 
@@ -56,9 +53,14 @@ class TopBar extends React.Component {
 
     return <div>
       <AppBar
-        style={{
-          backgroundColor: MyRawTheme.palette.toolBarPrimary1Color,
-          boxShadow: this.props.noShadow ? 'none': ''}}
+        style={
+          this.props.noShadow ? {
+            backgroundColor: MyRawTheme.palette.toolBarPrimary1Color,
+            boxShadow: 'none'
+          } : {
+            backgroundColor: MyRawTheme.palette.toolBarPrimary1Color
+          }
+        }
         title={this.props.title}
         titleStyle={{textAlign: 'center'}}
         iconElementLeft={
@@ -69,13 +71,6 @@ class TopBar extends React.Component {
               <Link to={"/dashboard"}>
                 <IconButton iconStyle={topBarIconStyle} >
                   <HomeIcon />
-                </IconButton>
-              </Link>
-            } />
-            <Tab label={
-              <Link to={"/calendar"}>
-                <IconButton iconStyle={topBarIconStyle} >
-                  <CalendarIcon />
                 </IconButton>
               </Link>
             } />
@@ -105,7 +100,6 @@ class TopBar extends React.Component {
         {this.props.children}
       </AppBar>
       <SlideNav ref="slideNav" />
-      <Login ref="loginDialog" />
     </div>;
   }
 }

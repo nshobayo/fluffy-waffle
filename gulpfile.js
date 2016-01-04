@@ -42,6 +42,12 @@ gulp.task('index', function() {
   .pipe(gulp.dest('dist'));
   });
 
+// Copy Site Res
+gulp.task('res', function() {
+  return gulp.src('res/*')
+  .pipe(gulp.dest('dist/res'));
+  });
+
 // Copy Server Scripts
 gulp.task('serverjs', function() {
   return gulp.src('js/server/*.js')
@@ -94,9 +100,10 @@ gulp.task('watch', function() {
   gulp.watch('js/server/*.jsx', ['serverjs']);
   gulp.watch('js/server/*.js', ['serverjs']);
   gulp.watch('data/*.json', ['contents']);
+  gulp.watch('res/*', ['res']);
   gulp.watch('html/*.html', ['index']);
   gulp.watch('less/**/*.less', ['styles']);
   });
 
 // Default Task
-gulp.task('default', ['lint', 'scripts', 'serverjs', 'contents', 'index', 'styles', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'serverjs', 'contents', 'res', 'index', 'styles', 'watch']);

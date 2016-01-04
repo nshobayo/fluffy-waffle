@@ -20,7 +20,7 @@ class CourseInfo extends React.Component {
   render() {
     return <Card initiallyExpanded={true}>
       <CardMedia>
-        <img src="http://lorempixel.com/600/337/nature/"/>
+        <img src="https://placeimg.com/640/480/any"/>
       </CardMedia>
       <CardTitle
         title="CS 2110 - Introduction to Asian American Studies"
@@ -32,10 +32,10 @@ class CourseInfo extends React.Component {
       </CardText>
       <CardActions expandable={true}>
         <div className="row">
-          <Link to={"/class?4780"}>
+          <Link to={"/schedule"}>
             <FlatButton label="Add" className="right" />
           </Link>
-          <Link to={"/schedule"}>
+          <Link to={"/class?4780"}>
             <FlatButton label="Details" className="right" />
           </Link>
         </div>

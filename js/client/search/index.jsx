@@ -6,10 +6,14 @@ import SearchSuggestions from './searchsuggestions'
 class Search extends React.Component {
     render () {
         return <div>
-          <SearchBar />
-          <SearchSuggestions items=
+          <SearchBar returnTo={this.props.returnTo} />
+          <SearchSuggestions style={{marginTop: '-2px', paddingTop: '0'}} items=
             {
                [
+                  {
+                     text:"CS 3",
+                     type:"Any"
+                  },
                   {
                      text:"CS 3110",
                      subtext:"Data Structures and Functional Programming",
@@ -27,7 +31,7 @@ class Search extends React.Component {
                   }
                ]
             } />
-          <SearchSuggestions subheader="Recent searches" items=
+          <SearchSuggestions style={{paddingTop: '0'}} subheader="Recent searches" items=
             {
                [
                   {

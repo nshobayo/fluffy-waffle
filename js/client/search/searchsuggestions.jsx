@@ -7,7 +7,7 @@ import Paper from 'material-ui/lib/paper'
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import { Row, Col } from 'elemental';
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import SearchSuggestionItem from './searchsuggestionitem'
 
 class SearchSuggestions extends React.Component {
@@ -28,7 +28,7 @@ class SearchSuggestions extends React.Component {
   }
 
   render() {
-    return <div style={{paddingTop: "0"}} className="row pad-medium">
+    return <div style={this.props.style || {paddingTop: "0"}} className="row pad-medium">
       <Paper zDepth={1}>
         <List subheader={this.props.subheader} style={{marginTop: "1px"}} >
           {this.renderItems()}

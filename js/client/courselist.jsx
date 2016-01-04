@@ -1,6 +1,6 @@
 import React from 'react';
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import CourseListItem from './courselistitem';
 
 class CourseList extends React.Component {

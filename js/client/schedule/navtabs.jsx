@@ -7,7 +7,7 @@ import MyRawTheme from '../theme.js';
 class NavTabs extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {count: props.initialCount};
+    this.state = {count: props.initialCount + 1, value: '0'};
   }
 
   //the key passed through context must be called "muiTheme"
@@ -21,11 +21,19 @@ class NavTabs extends React.Component {
     };
   }
 
+  handleChange = (value) => {
+    console.log('whats going on')
+    this.setState({
+      value: value
+    });
+  }
+
   renderItems() {
     var key = 0;
     return this.props.items.map((item) => {
+      console.log(key)
       return <Tab
-        key={++key} label={item.label}
+        key={key} label={item.label} value={(key++).toString()}
         style={{color: MyRawTheme.palette.toolBarText1Color}} >
       {item.content}
       </Tab>
@@ -33,9 +41,12 @@ class NavTabs extends React.Component {
   }
 
   render() {
+    let tabs = this.renderItems();
     return <Tabs
+      value={this.state.value}
+      onChange={this.handleChange}
       tabItemContainerStyle={{backgroundColor: MyRawTheme.palette.toolBarPrimary1Color}}>
-      {this.renderItems()}
+      {tabs}
     </Tabs>;
   }
 }

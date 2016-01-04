@@ -4,7 +4,6 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import Menu from 'material-ui/lib/menu/menu';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
-import Login from './login'
 import { Row, Col } from 'elemental';
 
 import RAvatar from 'react-avatar';
@@ -21,14 +20,13 @@ import SignInIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 
 import Colors from 'material-ui/lib/styles/colors'
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import ListItem from 'material-ui/lib/lists/list-item';
 
 class SlideNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {count: props.initialCount};
-    this.setState = this.setState.bind(this)
+    this.state = {count: props.initialCount, open: false};
   }
 
   handleClick(arg0, arg1) {
@@ -37,19 +35,13 @@ class SlideNav extends React.Component {
     }
   }
 
-  toggle() {
-    this.refs.leftNav.toggle();
-    this.setState({toggle: false});
-  }
+  handleToggle = () => this.setState({open: !this.state.open});
 
   render() {
-    if (this.state.open) {
-      toggle();
-    }
-
     // hideable Right Nav
     return <LeftNav
-              ref="leftNav"
+              open={this.state.open}
+              ref="rightNav"
               openRight={true}
               docked={false}
               style={{color: Colors.darkBlack}}
@@ -58,7 +50,7 @@ class SlideNav extends React.Component {
         <div style={{height: '100px', margin: 'auto'}} >
           <RAvatar
             name="John Dough"
-            src="http://www.mactrast.com/wp-content/uploads/2011/04/Steve-Jobs-Apple-CEO-150x150.jpg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/245px-Steve_Jobs_Headshot_2010-CROP.jpg"
             size={100}
             round={true} />
         </div>
@@ -80,7 +72,7 @@ class SlideNav extends React.Component {
         <ListItem
           primaryText="Sign in / register"
           rightIcon={<SignInIcon />}
-          onClick={this.handleClick.bind(this, "goTo", "/account")} />
+          onClick={this.handleClick.bind(this, "goTo", "/login")} />
       </List>
     </LeftNav>
   }

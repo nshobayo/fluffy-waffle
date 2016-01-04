@@ -25,7 +25,13 @@ class DashCard extends React.Component {
 
   render() {
     return <Card initiallyExpanded={true}>
-      <CardTitle subtitle={this.props.hint}/>
+      <CardTitle
+        subtitle={this.props.hint}
+        style={{
+          paddingBottom: '10px',
+          border: 'none',
+          borderBottom: '1px solid #eee'
+        }}/>
       <CardText>
         <h2 className="compact-heading">{this.props.title}</h2>
         <h3 className="compact-heading">{this.props.subtitle}</h3>

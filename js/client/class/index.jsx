@@ -25,12 +25,12 @@ import DiningIcon from 'material-ui/lib/svg-icons/maps/local-dining';
 
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import List from 'material-ui/lib/lists/list';
-import ListDivider from 'material-ui/lib/lists/list-divider';
+import ListDivider from 'material-ui/lib/divider';
 import ListItem from 'material-ui/lib/lists/list-item';
 import ReactSwipe from 'react-swipe';
 import CourseInfoImpression from './courseinfoimpression';
 import CourseInfoTable from './courseinfotable';
-
+import BottomFullWidthButton from '../bottomfullwidthbutton';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class Class extends React.Component {
@@ -94,6 +94,13 @@ class Class extends React.Component {
           </CardText>
         </Card></div>
       </ReactSwipe>
+      <div id="float-button-container">
+          <Link to={"/schedule"}>
+              <BottomFullWidthButton />
+          </Link>
+      </div>
+      <br />
+      <br />
     </div>
   }
 }

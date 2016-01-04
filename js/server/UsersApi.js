@@ -2,6 +2,7 @@
  * Created by Nisola on 1/3/16.
  */
 
+//TRANSFER TO API REPO
 var url = 'localhost:3000/mongoTest';
 var mongo = require('mongo');
 var db = require('monk')(url);
@@ -31,7 +32,8 @@ function oAuth(user){
 
 //Manages commnon Auth (DB Management from here)
 function genAuth(user){
+        //callback for Handling db response
     //Check key against DB or Add new User
-}
+});
 
 

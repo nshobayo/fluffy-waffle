@@ -8,10 +8,10 @@ module.exports = {
   palette: {
     toolBarPrimary1Color: Colors.white,
     toolBarText1Color: Colors.lightBlack,
-    primary1Color: Colors.red700,
+    primary1Color: Colors.red800,
     primary2Color: Colors.blue500,
     primary3Color: Colors.lightBlack,
-    accent1Color: Colors.redA100,
+    accent1Color: Colors.red600,
     accent2Color: Colors.grey100,
     accent3Color: Colors.grey500,
     textColor: Colors.darkBlack,

@@ -17,15 +17,21 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    return <div className="row pad-medium">
+    return <div className="row pad-medium" style={{paddingBottom: '0'}} >
       <form>
-        <Paper zDepth={1} style={{position: 'relative'}}>
-          <Link to={"/dashboard"}>
+        <Paper
+          zDepth={1}
+          style={{
+            position: 'relative',
+            borderRadius: '2px 2px 0 0',
+            borderBottom: '2px solid #eee' }}>
+          <Link to={this.props.returnTo} >
             <IconButton touch={true}>
               <BackIcon />
             </IconButton>
           </Link>
           <TextField
+            value='CS 3'
             style={{width: 'initial', position: 'absolute', left: "58px", right: "10px"}}
             hintText="Search"
             underlineStyle={{display: "none"}} />

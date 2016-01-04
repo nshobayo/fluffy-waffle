@@ -35,10 +35,16 @@ class InstructorListItem extends React.Component {
           </IconMenu>
           );
 
+        if (this.props.subtext) {
+          return <ListItem
+            primaryText={this.props.text}
+            secondaryText={<p>{this.props.subtext}</p>}
+            secondaryTextLines={1}
+            onClick={this.handleClick.bind(this, "goTo", "/search-result")}/>
+        }
+
         return <ListItem
           primaryText={this.props.text}
-          secondaryText={<p>{this.props.subtext}</p>}
-          secondaryTextLines={1}
           onClick={this.handleClick.bind(this, "goTo", "/search-result")}/>
     }
 }

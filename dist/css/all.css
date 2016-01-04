@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Vampiro+One|Roboto:400,300,500);
 @-webkit-keyframes modalDialogEnter {
   from {
     opacity: 0;
@@ -3962,7 +3962,7 @@ svg {
 }
 #float-button-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
   right: 0;
 }
@@ -4064,6 +4064,7 @@ h3 {
   font-size: 1rem;
 }
 .topbar-text-wrapper {
+  margin-top: 8px;
   line-height: 100%;
 }
 .swipe {

@@ -5,13 +5,23 @@ import RaisedButton from 'material-ui/lib/raised-button'
 import Colors from 'material-ui/lib/styles/colors'
 import CourseList from './../courselist'
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
-import {ClearFix, Mixins, SelectField, Paper, MenuItem} from 'material-ui';
+import {ClearFix, Mixins, Paper, MenuItem} from 'material-ui';
 import { Row, Col } from 'elemental';
+import DropDownMenu from 'material-ui/lib/DropDownMenu';
 
 class SearchFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {count: props.initialCount};
+  }
+
+  renderItems(stuff) {
+    var value = 0;
+    var listContent = []
+    stuff.map((item) => {
+      listContent[listContent.length] = <MenuItem key={value} value={value++} primaryText={item.text} />
+    });
+    return listContent;
   }
 
   render() {
@@ -43,25 +53,31 @@ class SearchFilter extends React.Component {
 
     return <div className="row pad-medium"><form><Row>
       <Col sm="1/3">
-        <SelectField style={{width: "100%"}}
+        <DropDownMenu style={{width: "100%"}}
           floatingLabelText="Subject"
-          value={{ payload: '1', text: 'CS' }}
+          value={0}
           onChange={this.handleSelectValueChange.bind(null, 'SubjectSelect')}
-          menuItems={subjects} />
+        >
+          {this.renderItems(subjects)}
+        </DropDownMenu>
       </Col>
       <Col sm="1/3">
-        <SelectField style={{width: "100%"}}
+        <DropDownMenu style={{width: "100%"}}
           floatingLabelText="Levels"
-          value={{ payload: '1', text: 'CS' }}
+          value={1}
           onChange={this.handleSelectValueChange.bind(null, 'SubjectSelect')}
-          menuItems={levels} />
+        >
+          {this.renderItems(levels)}
+        </DropDownMenu>
       </Col>
       <Col sm="1/3">
-        <SelectField style={{width: "100%"}}
+        <DropDownMenu style={{width: "100%"}}
           floatingLabelText="Grading / Credits"
-          value={{ payload: '1', text: 'CS' }}
+          value={0}
           onChange={this.handleSelectValueChange.bind(null, 'SubjectSelect')}
-          menuItems={credits} />
+        >
+          {this.renderItems(credits)}
+        </DropDownMenu>
       </Col>
     </Row></form></div>
   }

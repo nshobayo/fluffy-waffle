@@ -8,6 +8,7 @@ import SlideNav from '../slidenav'
 import Login from '../login'
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import MyRawTheme from '../theme.js';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 class TopBar extends React.Component {
   //the key passed through context must be called "muiTheme"
@@ -26,20 +27,21 @@ class TopBar extends React.Component {
     this.state = {count: props.initialCount};
   }
 
-  handleClick(arg0, arg1) {
-    if (arg0 === "goBack") {
-      location.replace("/search")
-    }
-  }
-
   render() {
     var title = this.props.title;
     var subtitle = this.props.subtitle;
     return <div>
       <AppBar
-      title={<div className="topbar-text-wrapper"><br style={{lineHeight:'64px'}} />{title}<br /><span id="topbar-subtitle">{subtitle}</span></div>}
+      title={<div className="topbar-text-wrapper">{title}<br /><span id="topbar-subtitle">{subtitle}</span></div>}
       iconElementLeft={
-        <IconButton onClick={this.handleClick.bind(this, "goBack")} ><NavigationBack /></IconButton>
+        <Link to={this.props.returnTo} >
+          <IconButton iconStyle={{color: 'white', fill: 'white'}} >
+            <NavigationBack />
+          </IconButton>
+        </Link>
+      }
+      iconElementRight={
+        <FlatButton label="Filters" />
       } />
     </div>;
   }
