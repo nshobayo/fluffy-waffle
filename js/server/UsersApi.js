@@ -5,30 +5,21 @@
 //TRANSFER TO API REPO
 var url = 'localhost:3000/mongoTest';
 var mongo = require('mongo');
-var db = require('monk')(url);
 
 
-
-//Manages Google Authentication Flow
-function googleUserAuth(user) {
-    //parse ggl user and create generic user
-    genAuth(newUser);
-}
 
 
 // Manages Fb Authentication Flow
-function fbUserAuth(user) {
+function userAuth(profile) {
     //parse ggl user and create generic user
+    profile.id
+
+    if()
+
 
     genAuth(newUser);
 }
 
-// manages oAuth authentication Flow
-function oAuth(user){
-    //parse ggl user and create generic user
-
-    genAuth(newUser);
-}
 
 //Manages commnon Auth (DB Management from here)
 function genAuth(user){
